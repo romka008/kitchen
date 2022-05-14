@@ -23,14 +23,13 @@
         // .page__section_3
         &_3 {
             background-color: #f0f0f0;
-            padding-top: 50px;
+            padding-top: 20px;
         }
         &_4 {
             background-color: #fff;
         }
         &_5 {
             background-color: #fff;
-            padding-bottom: 45px;
         }
     }
     // .page__homeGallary
@@ -102,6 +101,9 @@
     @media (max-width: 500px) {
         height: 60px;
     }
+    @media (max-width: 360px) {
+        height: 48px;
+    }
 }
 
 .partnersSvgBottom {
@@ -118,6 +120,12 @@
     @media (max-width: 450px) {
         height: 35px;
     }
+    @media (max-width: 400px) {
+        height: 30px;
+    }
+    @media (max-width: 352px) {
+        height: 25px;
+    }
 }
 
 .partnersWrapperSvg {
@@ -128,10 +136,6 @@
     flex-wrap: wrap;
     @media (max-width: 450px) {
         gap: 40px;
-    }
-    @media (max-width: 400px) {
-        flex-wrap: nowrap;
-        flex-direction: column;
     }
 }
 

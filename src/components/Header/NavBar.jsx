@@ -13,7 +13,7 @@ export const NavBar = () => {
     return (
         <div className="header">
             <div className="header__container">
-                <NavLink to="/" className="header__logo" onClick={handleOnClick}>
+                <NavLink to="/" className="header__logo" onClick={() => setIsActive(false)}>
                     Kухни+
                 </NavLink>
                 <div className="header__menu menu">
@@ -23,7 +23,7 @@ export const NavBar = () => {
                         <span></span>
                     </div>
                     <nav className={isActive ? 'menu__body _active' : 'menu__body'}>
-                        <ul className="menu__list" onClick={(e) => e.stopPropagation()}>
+                        <ul className="menu__list">
                             <NavLink
                                 to="/"
                                 className="nav_link"

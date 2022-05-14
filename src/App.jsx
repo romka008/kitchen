@@ -8,8 +8,8 @@ import { Stages } from './components/Stages/Stages'
 
 function App() {
     return (
-        <div className="">
-            <NavBar />
+        <div>
+            <NavBar  />
             <div style={{ paddingTop: '70px' }}>
                 <Routes>
                     <Route path="/" element={<Home />} />

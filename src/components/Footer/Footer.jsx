@@ -32,12 +32,10 @@ export const Footer = () => {
                 </div>
                 <div>
                     <p className="footer__links">
-                        {' '}
                         <a href="tel:+79036420075">8-903-642-00-75</a>
                     </p>
                     <p>С 10:00 до 18:00 по Мск</p>
                     <p className="footer__links">
-                        {' '}
                         <a href="mailto:pluskuhni@yandex.ru">pluskuhni@yandex.ru</a>
                     </p>
                 </div>
