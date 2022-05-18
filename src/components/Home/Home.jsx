@@ -6,6 +6,7 @@ import { Reviews } from './Reviews/Reviews'
 import { SwiperSlider } from './Swiper/SwiperSlider'
 import { fittings, appliances } from '../../svg/svg'
 import { about } from './text'
+import { FormSendMessage } from './Forms/FormSendMessage/FormSendMessage'
 
 export const Home = () => {
     const aboutBlock = about.map((el) => <p key={el.id}>{el.text}</p>)
@@ -67,6 +68,9 @@ export const Home = () => {
                             <div className="partnersWrapperSvg">{appliancesSvg}</div>
                         </div>
                     </section>
+                </div>
+                <div className="page__section_7">
+                    <FormSendMessage />
                 </div>
             </div>
         </div>
