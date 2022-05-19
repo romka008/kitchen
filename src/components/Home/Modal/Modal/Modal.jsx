@@ -25,7 +25,9 @@ export const Modal = ({ children, title }) => {
                     <h3>{title}</h3>
                 </div>
                 <div className="modal-body">{children}</div>
-                <button onClick={handleClose}>Закрыть</button>
+                <button className="modal-close" onClick={handleClose}>
+                    Закрыть
+                </button>
             </div>
         </div>
     )

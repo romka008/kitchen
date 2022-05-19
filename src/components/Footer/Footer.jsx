@@ -1,13 +1,15 @@
 import React from 'react'
 import { ModalContext } from '../Home/Modal'
+import { ModalCalculate } from '../Home/Modal/Modal/ModalCalculate/ModalCalculate'
 import { SvgSelector } from '../SvgSelector/SvgSelector'
 import './Footer.scss'
 
 export const Footer = () => {
-    const { openModal, closeModal } = React.useContext(ModalContext)
+    const { openModal } = React.useContext(ModalContext)
     const handleClickOnCalculation = () => {
         openModal({
             title: 'Рассчитать проект',
+            children: <ModalCalculate />,
         })
     }
     return (

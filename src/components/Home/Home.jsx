@@ -9,6 +9,7 @@ import { about } from './text'
 import { FormSendMessage } from './Forms/FormSendMessage/FormSendMessage'
 import { NavLink } from 'react-router-dom'
 import { ModalContext } from './Modal'
+import { ModalReview } from './Modal/Modal/ModalReview/ModalReview'
 
 export const Home = () => {
     const { openModal } = React.useContext(ModalContext)
@@ -16,6 +17,7 @@ export const Home = () => {
     const handleClickOnReview = () => {
         openModal({
             title: 'Оставить отзыв',
+            children: <ModalReview />,
         })
     }
 

@@ -12,7 +12,6 @@ export const FormSendMessage = () => {
     } = useForm()
 
     async function onSubmit(data) {
-        debugger
         alert(`Your name ${data.name}`)
         reset()
         const response = await sendData(serializeForm(data))
@@ -25,7 +24,6 @@ export const FormSendMessage = () => {
     }
 
     function serializeForm(formNode) {
-        debugger
         let formData = new FormData()
 
         formData.append('name', formNode.name)
