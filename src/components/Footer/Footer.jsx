@@ -1,8 +1,15 @@
 import React from 'react'
+import { ModalContext } from '../Home/Modal'
 import { SvgSelector } from '../SvgSelector/SvgSelector'
 import './Footer.scss'
 
 export const Footer = () => {
+    const { openModal, closeModal } = React.useContext(ModalContext)
+    const handleClickOnCalculation = () => {
+        openModal({
+            title: 'Рассчитать проект',
+        })
+    }
     return (
         <div className="footer">
             <div className="footer__section">
@@ -28,7 +35,7 @@ export const Footer = () => {
                     </p>
                 </div>
                 <div>
-                    <button>РАССЧИТАТЬ ПРОЕКТ</button>
+                    <button onClick={handleClickOnCalculation}>РАССЧИТАТЬ ПРОЕКТ</button>
                 </div>
                 <div>
                     <p className="footer__links">

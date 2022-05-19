@@ -7,8 +7,18 @@ import { SwiperSlider } from './Swiper/SwiperSlider'
 import { fittings, appliances } from '../../svg/svg'
 import { about } from './text'
 import { FormSendMessage } from './Forms/FormSendMessage/FormSendMessage'
+import { NavLink } from 'react-router-dom'
+import { ModalContext } from './Modal'
 
 export const Home = () => {
+    const { openModal } = React.useContext(ModalContext)
+
+    const handleClickOnReview = () => {
+        openModal({
+            title: 'Оставить отзыв',
+        })
+    }
+
     const aboutBlock = about.map((el) => <p key={el.id}>{el.text}</p>)
 
     const svgBlock = (kind, currentClass) => {
@@ -34,9 +44,9 @@ export const Home = () => {
                         <h1 className="page__title">ПОРТФОЛИО</h1>
                         <div className="page__raw page__text">
                             <div>Фрагменты наших избранных проектов</div>
-                            <a href="../portfolio.html">
-                                <button>СМОТРЕТЬ ВСЕ ПРОЕКТЫ</button>
-                            </a>
+                            <button>
+                                <NavLink to="/portfolio">СМОТРЕТЬ ВСЕ ПРОЕКТЫ</NavLink>
+                            </button>
                         </div>
                     </section>
                 </div>
@@ -47,7 +57,7 @@ export const Home = () => {
                     <Reviews />
                     <div className="page__section">
                         <div className="page__raw page__text">
-                            <button>ОСТАВИТЬ ОТЗЫВ</button>
+                            <button onClick={handleClickOnReview}>ОСТАВИТЬ ОТЗЫВ</button>
                         </div>
                     </div>
                 </div>
