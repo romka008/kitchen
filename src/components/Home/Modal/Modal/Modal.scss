@@ -49,6 +49,13 @@
     border-radius: 10px;
     transition: all 0.3s;
     animation: showModal 0.3s ease-out;
+    margin: 10px;
+    @media (max-width: 500px) {
+        height: 450px;
+    }
+    @media (max-width: 400px) {
+        height: 400px;
+    }
 }
 
 .modal-header {

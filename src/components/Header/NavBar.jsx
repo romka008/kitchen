@@ -2,15 +2,33 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ModalContext } from '../Home/Modal'
 import { SvgSelector } from '../SvgSelector/SvgSelector'
+import { data } from './data'
 import './NavBar.scss'
 
 export const NavBar = () => {
     const { closeModal } = React.useContext(ModalContext)
     const [isActive, setIsActive] = useState(false)
-    const handleOnClick = () => {
+
+    const link = data.map((el) => (
+        <NavLink
+            key={el.id}
+            to={el.path}
+            className={el.class}
+            style={handleOnActiveLink}
+            onClick={handleOnClick}>
+            {el.name}
+        </NavLink>
+    ))
+
+    function handleOnClick() {
         setIsActive((prevState) => !prevState)
         closeModal()
     }
+
+    function handleOnActiveLink({ isActive }) {
+        return { color: isActive ? 'rgb(91, 161, 241)' : '' }
+    }
+
     return (
         <div className="header">
             <div className="header__container">
@@ -23,7 +41,7 @@ export const NavBar = () => {
                     }}>
                     Kухни+
                 </NavLink>
-                <div className="header__menu menu">
+                <div className="header__menu">
                     <div
                         className={isActive ? 'menu__icon _active' : 'menu__icon'}
                         onClick={handleOnClick}>
@@ -31,51 +49,7 @@ export const NavBar = () => {
                     </div>
                     <nav className={isActive ? 'menu__body _active' : 'menu__body'}>
                         <ul className="menu__list">
-                            <NavLink
-                                to="/"
-                                className="nav_link"
-                                style={({ isActive }) => {
-                                    return { color: isActive ? 'rgb(91, 161, 241)' : '' }
-                                }}
-                                onClick={handleOnClick}>
-                                ГЛАВНАЯ
-                            </NavLink>
-                            <NavLink
-                                to="/portfolio"
-                                className="nav_link"
-                                style={({ isActive }) => {
-                                    return { color: isActive ? 'rgb(91, 161, 241)' : '' }
-                                }}
-                                onClick={handleOnClick}>
-                                ПОРТФОЛИО
-                            </NavLink>
-                            <NavLink
-                                to="/stages"
-                                className="nav_link"
-                                style={({ isActive }) => {
-                                    return { color: isActive ? 'rgb(91, 161, 241)' : '' }
-                                }}
-                                onClick={handleOnClick}>
-                                ЭТАПЫ РАБОТ
-                            </NavLink>
-                            <NavLink
-                                to="/blog"
-                                className="nav_link"
-                                style={({ isActive }) => {
-                                    return { color: isActive ? 'rgb(91, 161, 241)' : '' }
-                                }}
-                                onClick={handleOnClick}>
-                                БЛОГ
-                            </NavLink>
-                            <NavLink
-                                to="/contacts"
-                                className="nav_link"
-                                style={({ isActive }) => {
-                                    return { color: isActive ? 'rgb(91, 161, 241)' : '' }
-                                }}
-                                onClick={handleOnClick}>
-                                КОНТАКТЫ
-                            </NavLink>
+                            {link}
                             <div className="svg">
                                 <a
                                     href="https://www.instagram.com/pluskuhni/"
