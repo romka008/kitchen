@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgSelector } from '../../../SvgSelector/SvgSelector'
-import './FormSendMessage.scss'
 import { useForm } from 'react-hook-form'
+import './FormSendMessage.scss'
 
 export const FormSendMessage = () => {
     const {

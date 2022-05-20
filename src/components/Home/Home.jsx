@@ -10,6 +10,7 @@ import { FormSendMessage } from './Forms/FormSendMessage/FormSendMessage'
 import { NavLink } from 'react-router-dom'
 import { ModalContext } from './Modal'
 import { ModalReview } from './Modal/Modal/ModalReview/ModalReview'
+import { homeGalleryImg } from '../../img/img'
 
 export const Home = () => {
     const { openModal } = React.useContext(ModalContext)
@@ -53,7 +54,7 @@ export const Home = () => {
                     </section>
                 </div>
                 <div className="page__section_3">
-                    <HomeGallery />
+                    <HomeGallery img={homeGalleryImg} />
                 </div>
                 <div className="page__section_4">
                     <Reviews />
