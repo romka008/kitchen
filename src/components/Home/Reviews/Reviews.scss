@@ -6,7 +6,6 @@
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    // background: #fff;
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -30,8 +29,10 @@
     max-width: 550px;
     margin: 2em auto;
     padding: 1em;
+    background-color: #fff;
     box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
     margin-left: 10px;
+    cursor: grab;
     @media (max-width: 768px) {
         font-size: 16px;
     }

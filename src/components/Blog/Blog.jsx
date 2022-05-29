@@ -1,6 +1,11 @@
 import React from 'react'
+import { InDeveloping } from '../InDeveloping/InDeveloping'
 import './Blog.scss'
 
 export const Blog = () => {
-    return <div>Blog</div>
+    return (
+        <div>
+            <InDeveloping />
+        </div>
+    )
 }

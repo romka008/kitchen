@@ -39,6 +39,8 @@ import stages3 from './stages/3.jpg'
 import stages4 from './stages/4.jpg'
 import stages5 from './stages/5.jpg'
 
+import development from './development/development.jpg'
+
 export const homeGalleryImg = [
     { id: 1, img: { fullSize: one, min: oneMin } },
     { id: 2, img: { fullSize: two, min: twoMin } },
@@ -98,3 +100,5 @@ export const stagesData = [
         img: stages5,
     },
 ]
+
+export { development }

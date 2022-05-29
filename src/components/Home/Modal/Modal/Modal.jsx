@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { SvgSelector } from '../../../SvgSelector/SvgSelector'
 import { ModalContext } from '../ModalContext'
 import './Modal.scss'
 
@@ -23,11 +24,11 @@ export const Modal = ({ children, title }) => {
             <div className="modal" onClick={(e) => e.stopPropagation()}>
                 <div className="modal-header">
                     <h3>{title}</h3>
+                    <div className="modal-close" onClick={handleClose}>
+                        <SvgSelector id="close" />
+                    </div>
                 </div>
                 <div className="modal-body">{children}</div>
-                <button className="modal-close" onClick={handleClose}>
-                    Закрыть
-                </button>
             </div>
         </div>
     )

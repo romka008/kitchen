@@ -1,8 +1,10 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { ModalContext } from '../../ModalContext'
 import './ModalReview.scss'
 
 export const ModalReview = () => {
+    const { closeModal } = React.useContext(ModalContext)
     const {
         register,
         handleSubmit,
@@ -11,12 +13,12 @@ export const ModalReview = () => {
     } = useForm()
 
     async function onSubmit(data) {
-        alert(`Your name ${data.name}`)
         reset()
         const response = await sendData(serializeForm(data))
         if (response.ok) {
             let result = await response.json()
             alert(result.message)
+            closeModal()
         } else {
             alert('Код ошибки: ' + response.status)
         }
