@@ -13,6 +13,7 @@ export const ModalCalculate = () => {
     } = useForm()
 
     async function onSubmit(data) {
+        closeModal()
         reset()
         const response = await sendData(serializeForm(data))
         if (response.ok) {
@@ -20,7 +21,8 @@ export const ModalCalculate = () => {
             alert(result.message)
             closeModal()
         } else {
-            alert('Код ошибки: ' + response.status)
+            closeModal()
+            // alert('Код ошибки: ' + response.status)
         }
     }
 

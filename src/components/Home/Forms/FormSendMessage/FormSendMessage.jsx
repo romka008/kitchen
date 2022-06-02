@@ -12,7 +12,6 @@ export const FormSendMessage = () => {
     } = useForm()
 
     async function onSubmit(data) {
-        alert(`Your name ${data.name}`)
         reset()
         const response = await sendData(serializeForm(data))
         if (response.ok) {

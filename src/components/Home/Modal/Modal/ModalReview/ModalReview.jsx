@@ -13,14 +13,15 @@ export const ModalReview = () => {
     } = useForm()
 
     async function onSubmit(data) {
+        closeModal()
         reset()
         const response = await sendData(serializeForm(data))
         if (response.ok) {
             let result = await response.json()
             alert(result.message)
-            closeModal()
         } else {
-            alert('Код ошибки: ' + response.status)
+            closeModal()
+            // alert('Код ошибки: ' + response.status)
         }
     }
 
