@@ -39,7 +39,7 @@ export const NavBar = () => {
                         setIsActive(false)
                         closeModal()
                     }}>
-                    Kухни+
+                    КУХНИ+
                 </NavLink>
                 <div className="header__menu">
                     <div
